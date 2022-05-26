@@ -93,7 +93,7 @@ def register():
     register_form = RegisterForm()
     if register_form.validate_on_submit():
 
-        user = User.query.filter_by(email=register_form.email).first()
+        user = User.query.filter_by(email=register_form.email.data).first()
 
         if user:
             # User already exists
