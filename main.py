@@ -33,7 +33,7 @@ gravatar = Gravatar(app,
 
 ##CONNECT TO DB
 # for run in Heroku and sqlAlchemy>=1.4.x
-URI = os.environ.get("DATABASE_URL")
+URI = os.getenv("DATABASE_URL")
 if URI.startswith("postgres://"):
     URI = URI.replace("postgres://", "postgresql://", 1)
 
